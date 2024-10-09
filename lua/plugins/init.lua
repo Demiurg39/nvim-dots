@@ -29,15 +29,6 @@ local plugins = {
     },
 
     {
-        "williamboman/mason-lspconfig.nvim",
-        dependencies = { "neovim/nvim-lspconfig" },
-        event = "VeryLazy",
-        config = function()
-            require "configs.mason-lspconfig"
-        end,
-    },
-
-    {
         "mfussenegger/nvim-lint",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
@@ -46,27 +37,9 @@ local plugins = {
     },
 
     {
-        "rshkarin/mason-nvim-lint",
-        dependencies = { "mfussenegger/nvim-lint" },
-        event = "VeryLazy",
-        config = function()
-            require "configs.mason-lint"
-        end,
-    },
-
-    {
         "stevearc/conform.nvim",
         event = "BufWritePre", -- uncomment for format on save
         opts = require "configs.conform",
-    },
-
-    {
-        "zapling/mason-conform.nvim",
-        dependencies = { "conform.nvim" },
-        event = "VeryLazy",
-        config = function()
-            require "configs.mason-conform"
-        end,
     },
 
     {
@@ -97,17 +70,7 @@ local plugins = {
     },
 
     {
-        "nvimdev/lspsaga.nvim",
-        dependency = { "neovim/nvim-lspconfig" },
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require "configs.lspsaga"
-        end,
-    },
-
-    {
         "kylechui/nvim-surround",
-        version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         lazy = true,
         config = true,
@@ -119,24 +82,6 @@ local plugins = {
         event = "VeryLazy",
         lazy = true,
         config = true,
-    },
-
-    {
-        "folke/noice.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-        event = "VeryLazy",
-        config = function()
-            require "configs.noice"
-        end,
-    },
-
-    {
-        "goolord/alpha-nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        event = "VimEnter",
-        config = function()
-            require "configs.dashboard"
-        end,
     },
 }
 
