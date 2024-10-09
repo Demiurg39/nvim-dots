@@ -1,5 +1,10 @@
 local map = vim.keymap.set
 local tabline = require "nvchad.tabufline"
+local term = require "nvchad.term"
+local cmds = {
+    lazygit = { pos = "float", cmd = "lazygit", size = 1, id = "lazygit term" },
+    reg_term = { pos = "float", size = 0.7, id = "regular term" },
+}
 
 local function opts(desc)
     return { desc = desc, noremap = true, silent = true }
@@ -68,6 +73,15 @@ map(
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts "debug: Toggle DAP Breakpoint")
 map("n", "<leader>ds", "<cmd>DapContinue<CR>", opts "debug: Start or continue DAP")
 map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", opts "debug: Toggle DAP UI")
+
+-- terminal
+map({ "n", "t" }, "<A-t>", function()
+    term.toggle(cmds.reg_term)
+end, opts "terminal: toggleable float terminal")
+
+map({ "n", "t" }, "<leader>tg", function()
+    term.toggle(cmds.lazygit)
+end, opts "terminal: toggleable lazygit terminal")
 
 -- Insert mode
 
