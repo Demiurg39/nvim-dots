@@ -17,11 +17,7 @@ local options = {
         },
 
         black = {
-            prepend_args = {
-                "--fast",
-                "--line-length",
-                "80",
-            },
+            prepend_args = { "--fast", "--line-length", "80" },
         },
     },
 
