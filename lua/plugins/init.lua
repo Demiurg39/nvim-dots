@@ -1,7 +1,5 @@
 local plugins = {
 
-    { "folke/neoconf.nvim" },
-
     {
         "folke/lazydev.nvim",
         ft = "lua",
