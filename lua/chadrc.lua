@@ -15,9 +15,9 @@ M.base46 = {
     },
 
     integrations = {
-        "blankline",
         "cmp",
         "git",
+        "dap",
     },
 }
 
@@ -81,6 +81,18 @@ M.colorify = {
     mode = "virtual", -- fg, bg, virtual
     virt_text = "󱓻 ",
     highlight = { hex = true, lspvars = true },
+}
+
+M.term = {
+    winopts = { number = false },
+    sizes = { sp = 0.3, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
+    float = {
+        row = 0.3,
+        col = 0.25,
+        width = 0.8,
+        height = 0.7,
+        border = "single",
+    },
 }
 
 return M
