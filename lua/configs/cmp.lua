@@ -1,3 +1,5 @@
+dofile(vim.g.base46_cache .. "cmp")
+
 local opts = require "nvchad.configs.cmp"
 opts.sources = opts.sources or {}
 table.insert(opts.sources, {
